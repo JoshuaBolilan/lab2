@@ -1,0 +1,226 @@
+/* GLOBAL STYLES */
+body {
+  background: radial-gradient(circle at center, #000810 0%, #000000 100%);
+  color: #e7f7e7;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.app-root {
+  width: 100%;
+  max-width: 1300px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.neon-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.neon-text {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00cc99, 0 0 30px #00ffcc;
+  letter-spacing: 2px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 10px #00ffcc; }
+  50% { text-shadow: 0 0 25px #00ffaa; }
+}
+
+.subtitle {
+  color: #99ffcc;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* CONTROL PANELS */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 204, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.difficulties button {
+  margin-right: 6px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #00ffcc;
+  background: transparent;
+  color: #00ffcc;
+  font-family: "Share Tech Mono";
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.difficulties button.active,
+.difficulties button:hover {
+  background: #00ffcc;
+  color: #001a12;
+  text-shadow: 0 0 5px #fff;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions input {
+  width: 70px;
+  margin-left: 5px;
+  border-radius: 4px;
+  background: #001a12;
+  color: #00ffcc;
+  border: 1px solid #00ffcc;
+  text-align: center;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #003322;
+  border: 1px solid #00cc99;
+  color: #00ffcc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.actions button:hover {
+  background: #00ffcc;
+  color: #003322;
+}
+
+/* CANVAS CONTAINER */
+.canvas-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 255, 204, 0.2);
+  background: #000f0a;
+  width: 100%;
+  height: calc(80vh - 100px);
+  box-shadow: 0 0 25px #00ffcc55;
+}
+
+/* CANVAS */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #050A10;
+  image-rendering: pixelated;
+  border-radius: 10px;
+}
+
+/* DEBUG PANEL */
+.debug-panel {
+  margin-top: 8px;
+  color: #bff;
+  text-align: center;
+  font-family: "Share Tech Mono";
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #00ffcc;
+  font-family: "Share Tech Mono";
+  font-size: 13px;
+}
+
+.brand {
+  color: #fff;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 900px) {
+  .canvas-wrap {
+    height: 65vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .actions input {
+    width: 55px;
+  }
+  .controls {
+    flex-direction: column;
+  }
+  .canvas-wrap {
+    height: 60vh;
+  }
+}
+/* existing styles stay above */
+
+.mobile-controls {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  gap: 10px;
+  z-index: 10;
+}
+
+.middle-row {
+  display: flex;
+  gap: 10px;
+}
+
+.ctrl-btn {
+  background: rgba(0,255,204,0.15);
+  border: 2px solid #00ffcc;
+  color: #00ffcc;
+  font-size: 22px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-family: "Orbitron";
+  cursor: pointer;
+  text-shadow: 0 0 8px #00ffaa;
+  box-shadow: 0 0 12px #00ffcc44;
+  transition: 0.2s;
+}
+
+.ctrl-btn:active {
+  background: #00ffcc;
+  color: #002b1e;
+}
+
+/* Show touch controls only on mobile */
+@media (max-width: 768px) {
+  .mobile-controls {
+    display: flex;
+  }
+}
