@@ -1,0 +1,17 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "Neon Serpent: Grid Survival - A modern Snake game",
+  "main": "html/index.html",
+  "scripts": {
+    "start": "npx serve html",
+    "build": "echo 'No build step required for static site'",
+    "dev": "npx serve html"
+  },
+  "keywords": ["snake", "game", "html5", "canvas", "javascript"],
+  "author": "GrayTech Studios",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

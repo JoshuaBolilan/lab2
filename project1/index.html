@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐍 Neon Serpent: Grid Survival</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-root">
+    <header class="neon-header">
+      <h1><span class="neon-text">🐍 Neon Serpent</span></h1>
+      <p class="subtitle">Grid Survival Challenge — WASD / Arrow Keys or Touch</p>
+    </header>
+
+    <div class="controls glass-panel">
+      <div class="difficulties">
+        <button data-diff="Easy" class="active">Easy</button>
+        <button data-diff="Medium">Medium</button>
+        <button data-diff="Hard">Hard</button>
+        <button data-diff="Extreme">Extreme</button>
+      </div>
+
+      <div class="actions">
+        <label>
+          Speed (ms):
+          <input id="speedInput" type="number" value="120" min="20" max="1000" />
+        </label>
+        <button id="startBtn">▶ Start</button>
+        <button id="pauseBtn">⏸ Pause</button>
+        <button id="resetBtn">🔁 Reset</button>
+      </div>
+    </div>
+
+    <div class="canvas-wrap neon-border">
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- 👇 Mobile touch controls -->
+      <div class="mobile-controls">
+        <button id="upBtn" class="ctrl-btn">▲</button>
+        <div class="middle-row">
+          <button id="leftBtn" class="ctrl-btn">◀</button>
+          <button id="downBtn" class="ctrl-btn">▼</button>
+          <button id="rightBtn" class="ctrl-btn">▶</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="debugPanel" class="debug-panel glass-panel"></div>
+
+    <footer>
+      <p>Developed by <span class="brand">GrayTech Studios</span> | © 2025</p>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
